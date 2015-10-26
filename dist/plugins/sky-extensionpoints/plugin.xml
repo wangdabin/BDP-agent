@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="sky-extensionpoints"
+   name="the sky core extension points"
+   version="2.0.0"
+   type="core"
+   provider-name="beagledata.com">
+	
+	<!-- Config -->
+	<extension-point id="com.joe.config.plugin.Config" name="config"/>
+</plugin>

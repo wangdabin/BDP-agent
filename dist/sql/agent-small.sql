@@ -1,0 +1,21 @@
+-- 任务表
+create table TASK(
+	ID BIGINT NOT NULL PRIMARY KEY, -- id 主键
+	NAME VARCHAR(50), -- 名称
+	TYPE VARCHAR(50), -- 类型
+	STATUS INT,  -- 状态
+	CTIME BIGINT, -- 创建时间
+	FTIME BIGINT, -- 完成时间
+	MESSAGE LONGVARCHAR -- 信息
+);
+
+-- 命令表
+create table ORDER(
+	ID BIGINT NOT NULL PRIMARY KEY,  -- id 主键
+	MESSAGE LONGVARCHAR, -- 信息
+	SUCCESS BIT, -- 是否成功
+	OBJ LONGVARCHAR, -- order 对象内容
+	CLASSNAME LONGVARCHAR, -- 类名
+	TID BIGINT NOT NULL, -- 任务ID
+	FOREIGN KEY(TID) REFERENCES TASK(ID)
+);

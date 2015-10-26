@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="configs"
+   name="config"
+   version="2.0.0"
+   type="config"
+   provider-name="beagledata.com">
+
+   <runtime>
+      <library name="configs.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <requires>
+      <import plugin="sky-extensionpoints"/>
+   </requires>
+
+   <extension id="com.joe.config.plugin.Config"
+              name="Configs"
+              point="com.joe.config.plugin.Config">
+       <!-- hadoop 通用配置文件的加载与保存 -->
+      <implementation id="HadoopConfig" class="com.joe.plugin.config.HadoopConfig"/>
+      
+      <!-- Properties 配置文件的加载与保存 -->
+      <implementation id="PropertiesConfig" class="com.joe.plugin.config.PropertiesConfig"/>
+      
+      <!-- 环境变量配置 -->
+      <implementation id="EnvironmentConfig" class="com.joe.plugin.config.EnvironmentConfig"/>
+      
+      <!-- 机架配置 -->
+      <implementation id="RackConfig" class="com.joe.plugin.config.RackConfig"/>
+      
+      <!-- 副本配置 -->
+      <implementation id="ReplicaPolicyConfig" class="com.joe.plugin.config.ReplicaPolicyConfig"/>
+   </extension>
+
+</plugin>
